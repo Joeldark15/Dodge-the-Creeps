@@ -32,16 +32,14 @@ func _process(delta):
 	elif velocity.y != 0:
 		$AnimatedSprite.animation = "up"
 		$AnimatedSprite.flip_v = velocity.y > 0
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
 
 
 func _on_player_body_entered(body):
-	hide() # El jugador desapareix després de ser impactat.
+	hide()
 	emit_signal("hit")
-# S'ha d'ajornar, ja que no podem canviar les propietats físiques en una crida de retorn de física.
 	$CollisionShape2D.set_deferred("disabled", true)
+
 func start(pos):
 	position = pos
 	show()
