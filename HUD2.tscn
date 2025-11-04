@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets (2)/dodge_assets/fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD.gd" type="Script" id=2]
@@ -7,19 +7,13 @@
 size = 64
 font_data = ExtResource( 1 )
 
-[sub_resource type="InputEventAction" id=4]
-action = "start_game"
-
-[sub_resource type="ShortCut" id=3]
-shortcut = SubResource( 4 )
-
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD2" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="ScoreLabel" type="Label" parent="."]
-margin_left = 33.0
+margin_left = 408.0
 margin_top = 16.0
-margin_right = 78.0
+margin_right = 453.0
 margin_bottom = 94.0
 custom_fonts/font = SubResource( 1 )
 text = "0"
@@ -34,18 +28,8 @@ text = "Dodge the
 Creeps!"
 align = 1
 
-[node name="StartButton" type="Button" parent="."]
-margin_left = 167.0
-margin_top = 478.0
-margin_right = 347.0
-margin_bottom = 578.0
-custom_fonts/font = SubResource( 1 )
-shortcut = SubResource( 3 )
-text = "Start"
-
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
