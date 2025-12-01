@@ -95,4 +95,5 @@ text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Single Player" to="." method="_on_Single_Player_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Local MultiPlayer" to="." method="_on_Local_MultiPlayer_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

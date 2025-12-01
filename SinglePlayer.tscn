@@ -8,12 +8,18 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 472, 0, 0, 0, 0, 0, 472, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 360, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0 )
 }
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
 mob_scene = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="."]
+margin_right = 88.0
+margin_bottom = 48.0
+text = "
+GO BACK"
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
@@ -39,6 +45,7 @@ curve = SubResource( 1 )
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="hit" from="Player" to="." method="game_over"]
 [connection signal="timeout" from="MobTimer" to="." method="_on_MobTimer_timeout"]
 [connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
